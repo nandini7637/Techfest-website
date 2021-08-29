@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+    <title>Events</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  .u-clearfix:before,
+  .u-clearfix:after {
+    content: " ";
+    display: table;
+  }
+  
+  .u-clearfix:after {
+    clear: both;
+  }
+  
+  .u-clearfix {
+    *zoom: 1;
+  }
+  
+  .subtle {
+    color: #aaa;
+  }
+  
+  .card-container {
+    margin: 25px auto 0;
+    position: relative;
+    width: 692px;
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 0 5px rgba(75, 75, 75, .07);
+    z-index: 1;
+  }
+  
+  .card-body {
+    display: inline-block;
+    float: left;
+    width: 310px;
+  }
+  
+  .card-number {
+    margin-top: 15px;
+  }
+  
+  .card-circle {
+    border: 1px solid #aaa;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 22px;
+    font-size: 12px;
+    height: 25px;
+    text-align: center;
+    width: 25px;
+  }
+  
+  .card-author {
+    display: block;
+    font-size: 12px;
+    letter-spacing: .5px;
+    margin: 15px 0 0;
+    text-transform: uppercase;
+  }
+  
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 60px;
+    margin: 10px 0;
+  }
+  
+  .card-description {
+    display: inline-block;
+    font-weight: 300;
+    line-height: 22px;
+    margin: 10px 0;
+  }
+  
+  .card-read {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    margin: 5px 0 20px;
+    position: relative;
+    text-align: right;
+    text-transform: uppercase;
+  }
+  
+  .card-read:after {
+    /*background-color: #b8bddd;*/
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 9px;
+    width: 75%;
+  }
+  
+  .card-tag {
+    float: right;
+    margin: 5px 0 0;
+  }
+  
+  .card-media {
+    float: right;
+  }
+  
+  .card-shadow {
+    background-color: #fff;
+    box-shadow: 0 2px 25px 2px rgba(0, 0, 0, 1), 0 2px 50px 2px rgba(0, 0, 0, 1), 0 0 100px 3px rgba(0, 0, 0, .25);
+    height: 1px;
+    margin: -1px auto 0;
+    width: 80%;
+    z-index: -1;
+  }
+
+  .btn-1 {
+    background-color: #d44e8d;
+  }
+  .btn-1 .round {
+    background-color: #ff90b1;
+  }
+
+  a {
+    text-decoration: none;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    padding: 12px 53px 12px 23px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: bold;
+    position: relative;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+  a span {
+    position: relative;
+    z-index: 3;
+  }
+  a .round {
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    z-index: 2;
+  }
+  a .round i {
+    position: absolute;
+    top: 50%;
+    margin-top: -6px;
+    left: 50%;
+    margin-left: -4px;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+
+  .btn-1 a:hover {
+    padding-left: 48px;
+    padding-right: 28px;
+  }
+  .btn-1 a:hover .round {
+    width: calc(100% - 6px);
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+  }
+  .btn-1 a:hover .round i {
+    left: 12%;
+  }
+  
+
+
+
+    </style>
+</head>
+
+<body style="background-color: black;">
+ 
+    <div id="animate">
+    
+    <!--<div class="nav">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+            <div class="nav-title">
+                EVENTS
+            </div>
+        </div>
+        <div class="nav-btn">
+            <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#" target="_blank">Gallary</a>
+            <a href="#" target="_blank">Sponsors</a>
+            <a href="#" target="_blank">Social Campaign</a>
+            <a href="index.html">Meet the team!</a>
+        </div>
+    </div>-->
+<br/>
+
+    <!--EVENTS DETAILS-->
+
+<h1 style="text-align: center;font-size:70px;font-family: monospace;color: rgb(73, 167, 162);">EVENTS</h1>
+
+    <div class="card-container">
+        <div class="card u-clearfix" style="background-color: rgb(230, 155, 121);">
+          <div class="card-body">
+            <span class="card-number card-cicle subtle">01</span>
+            <h2 class="card-title">CSE/IT Events</h2>
+            <br>
+            <div>
+              <a href="#" target="_blank" class="btn btn-1">
+                <span class="txt">More</span>
+                <span class="round"><i class="fa fa-chevron-right"></i></span>
+              </a>
+            </div>
+            <span class="card-tag card-circle subtle">C</span>
+          </div>
+          <img src="cse.jpg" alt="" class="card-media" style="height: 35vh;width:19vw" />
+        </div>
+        <div class="card-shadow"></div>
+      </div>
+
+      <div class="card-container">
+        <div class="card u-clearfix" style="background-color:rgb(230, 155, 121);;">
+          <div class="card-body">
+            <span class="card-number card-circle subtle">02</span>
+            <h2 class="card-title">ECE Events</h2>
+            <br>
+            <div>
+              <a href="#" target="_blank" class="btn btn-1">
+                <span class="txt">More</span>
+                <span class="round"><i class="fa fa-chevron-right"></i></span>
+              </a>
+            </div>
+            <span class="card-tag card-circle subtle">C</span>
+          </div>
+          <img src="cse.jpg" alt="" class="card-media" style="height: 35vh;width:19vw;" />
+        </div>
+        <div class="card-shadow"></div>
+      </div>
+
+      <div class="card-container">
+        <div class="card u-clearfix" style="background-color:rgb(230, 155, 121);">
+          <div class="card-body">
+            <span class="card-number card-circle subtle">03</span>
+            <h2 class="card-title">MAE Events</h2>
+            <br>
+            <div>
+              <a href="#" target="_blank" class="btn btn-1">
+                <span class="txt">More</span>
+                <span class="round"><i class="fa fa-chevron-right"></i></span>
+              </a>
+            </div>
+            <span class="card-tag card-circle subtle">C</span>
+          </div>
+          <img src="cse.jpg" alt="" class="card-media" style="height: 35vh;width:19vw;" />
+        </div>
+        <div class="card-shadow"></div>
+      </div>
+
+
+      <div class="card-container">
+        <div class="card u-clearfix" style="background-color:rgb(230, 155, 121);">
+          <div class="card-body">
+            <span class="card-number card-circle subtle">04</span>
+            <h2 class="card-title">Informal Events</h2>
+            <br>
+            <div>
+              <a href="#" target="_blank" class="btn btn-1">
+                <span class="txt">More</span>
+                <span class="round"><i class="fa fa-chevron-right"></i></span>
+              </a>
+            </div>
+            <span class="card-tag card-circle subtle">C</span>
+          </div>
+          <img src="cse.jpg" alt="" class="card-media" style="height: 35vh;width:19vw;" />
+        </div>
+        <div class="card-shadow"></div>
+      </div>
+
+      <div class="card-container">
+        <div class="card u-clearfix" style="background-color:rgb(230, 155, 121);">
+          <div class="card-body">
+            <span class="card-number card-circle subtle">05</span>
+            <h2 class="card-title">BBA Events</h2>
+            <br>
+            <div>
+              <a href="#" target="_blank" class="btn btn-1">
+                <span class="txt">More</span>
+                <span class="round"><i class="fa fa-chevron-right"></i></span>
+              </a>
+            </div>
+            <span class="card-tag card-circle subtle">C</span>
+          </div>
+          <img src="cse.jpg" alt="" class="card-media" style="height: 35vh;width:19vw;" />
+        </div>
+        <div class="card-shadow"></div>
+      </div>
+
+
+      <div class="card-container">
+        <div class="card u-clearfix" style="background-color:rgb(230, 155, 121);">
+          <div class="card-body">
+            <span class="card-number card-circle subtle">06</span>
+            <h2 class="card-title">Other Events</h2>
+            <br>
+            <div>
+              <a href="#" target="_blank" class="btn btn-1">
+                <span class="txt">More</span>
+                <span class="round"><i class="fa fa-chevron-right"></i></span>
+              </a>
+            </div>
+            <span class="card-tag card-circle subtle">C</span>
+          </div>
+          <img src="cse.jpg" alt="" class="card-media" style="height: 35vh;width:19vw;" />
+        </div>
+        <div class="card-shadow"></div>
+      </div>
+
+
+
+    </div>
+
+    <script>
+        VANTA.NET({
+          el: "#animate",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: 0xff973f,
+          maxDistance: 21.00,
+          backgroundColor: 0x0,
+        })
+        </script>
+</body>
+
+</html>
