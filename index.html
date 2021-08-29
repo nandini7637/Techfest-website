@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
+    <title>Innerve Task</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+
+        .swiper-container {
+            width: 100%;
+            padding-top: 90px;
+            padding-bottom: 10px;
+            transition: all 0.5s linear;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 420px;
+            height: 420px;
+        }
+
+        .swiper-slide .number {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.75;
+            text-shadow: 4px 4px 4px rgba(255, 255, 255, 0.973),
+                -5px px 4px rgba(255, 255, 255, 0.952);
+            font-size: 40px;
+            font-weight: 400;
+        }
+
+
+        footer{
+  width: 100%;
+ 
+  bottom: 0;
+  left: 0;
+  background: #111;
+}
+footer .content{
+  max-width: 1350px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer .content p,a{
+  color: #fff;
+}
+footer .content .box{
+  width: 33%;
+  transition: all 0.4s ease;
+}
+footer .content .topic{
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 16px;
+
+}
+footer .content p{
+  text-align: justify;
+}
+footer .content .lower .topic{
+  margin: 24px 0 5px 0;
+}
+footer .content .lower i{
+  padding-right: 16px;
+}
+footer .content .middle{
+  padding-left: 80px;
+}
+footer .content .middle a{
+  line-height: 32px;
+}
+footer .content .right input[type="text"]{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  color: #d9d9d9;
+  background: #000;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 17px;
+  border: 2px solid #222222;
+}
+footer .content .right input[type="submit"]{
+  height: 42px;
+  width: 100%;
+  font-size: 18px;
+  color: #d9d9d9;
+  background: #eb2f06;
+  outline: none;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 12px;
+  border: 2px solid #eb2f06;
+  transition: all 0.3s ease-in-out;
+}
+.content .right input[type="submit"]:hover{
+  background: none;
+  color:  #eb2f06;
+}
+footer .content .media-icons a{
+  font-size: 16px;
+  height: 45px;
+  width: 45px;
+  display: inline-block;
+  text-align: center;
+  line-height: 43px;
+  border-radius: 5px;
+  border: 2px solid #222222;
+  margin: 30px 5px 0 0;
+  transition: all 0.3s ease;
+}
+.content .media-icons a:hover{
+  border-color: #eb2f06;
+}
+footer .bottom{
+  width: 100%;
+  text-align: right;
+  color: #d9d9d9;
+  padding: 0 40px 5px 0;
+}
+footer .bottom a{
+  color: #eb2f06;
+}
+footer a{
+  transition: all 0.3s ease;
+}
+footer a:hover{
+  color: #eb2f06;
+}
+@media (max-width:1100px) {
+  footer .content .middle{
+    padding-left: 50px;
+  }
+}
+@media (max-width:950px){
+  footer .content .box{
+    width: 50%;
+  }
+  .content .right{
+    margin-top: 40px;
+  }
+}
+@media (max-width:560px){
+  footer{
+    position: relative;
+  }
+  footer .content .box{
+    width: 100%;
+    margin-top: 30px;
+  }
+  footer .content .middle{
+    padding-left: 0;
+  }
+}
+
+
+
+
+
+    </style>
+
+</head>
+
+<body style="background-color: black;">
+
+    <!--Navbar-->
+
+    <div class="nav" style="position:fixed;">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+            <div class="nav-title">
+                Innerve
+            </div>
+        </div>
+        <div class="nav-btn">
+            <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+
+        <div class="nav-links">
+            <a href="events.html">Events</a>
+            <a href="gallary.html">Gallary</a>
+            <a href="sponsor.html" >Sponsors</a>
+            <a href="#team">Meet the team!</a>
+        </div>
+    </div>
+
+    <!--Title Header-->
+
+    <div class="head">
+        <img src="innerve.jpg" style="background-repeat: no-repeat;background-size: cover;height: 110vh;width: 100%;">
+
+    </div>
+    <br />
+
+    <!--Head ends-->
+    <!--About us-->
+
+
+    <div id="abt" style="height: 70vh;width: 100vw;">
+
+
+        <h2
+            style="z-index: 5;color: aliceblue;text-align:justify;padding-top: 25vh;padding-left: 5vw;font-size:5rem;text-transform: uppercase;">
+            About us</h2>
+
+
+    </div>
+
+    <br />
+
+    <div class="team">
+        <p style="color: aliceblue; font-size: larger;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est
+            dolores rerum, reiciendis aliquid ea assumenda
+            repellendus vel autem quis voluptatem temporibus atque doloremque quo cumque ipsam hic quisquam fuga quae.
+        </p>
+    </div>
+    <br /><br />
+    <!--Meet the team-->
+
+    <h2
+        style="text-align: center;color: aliceblue;font-size: xx-large;text-transform: uppercase;text-decoration: underline;">
+        Meet our Team</h2>
+
+        <section id="team">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-color: aliceblue;">
+                <div class="number" style="color:black;">Image of Web dev head</div>
+            </div>
+            <div class="swiper-slide" style="background-color: aliceblue;">
+                <div class="number" style="color:black;">Image of Convener head</div>
+            </div>
+            <div class="swiper-slide" style="background-color: aliceblue;">
+                <div class="number" style="color:black;">Image of CSE head</div>
+            </div>
+            <div class="swiper-slide" style="background-color: aliceblue;">
+                <div class="number" style="color:black;">Image of HR head</div>
+            </div>
+            <div class="swiper-slide" style="background-color: aliceblue;">
+                <div class="number" style="color:black;">Image of PR head etc</div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+    </div>
+        </section>
+    <br/>
+
+
+
+    <footer>
+        <div class="content">
+          <div class="left box">
+            <div class="upper">
+              <div class="topic">About us</div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, vitae!</p>
+    
+            </div>
+            <div class="lower">
+              <div class="topic">Contact us</div>
+              <div class="phone">
+                <a href="#"><i class="fas fa-phone-volume"></i>99999999</a>
+              </div>
+              <div class="email">
+                <a href="#"><i class="fas fa-envelope"></i>abc@gmail.com</a>
+              </div>
+            </div>
+          </div>
+          <div class="middle box">
+            <div class="topic">Explore</div>
+            <div><a href="#">Events</a></div>
+            <div><a href="#">Gallary</a></div>
+            <div><a href="#">Sponsors</a></div>
+            <div><a href="#">Team</a></div>
+          </div>
+          <div class="right box">
+            <div class="topic">Connect</div>
+            <form action="#">
+              <input type="text" placeholder="Enter email address">
+              <input type="submit" name="" value="Send">
+              <div class="media-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="bottom">
+          <p>Copyright © 2021 <a href="#">Innerve Igdtuw</a> All rights reserved</p>
+        </div>
+      </footer>
+     
+
+
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            loop: true,
+        });
+    </script>
+
+
+
+    <script>
+        VANTA.GLOBE({
+            el: "#abt",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0xc44516,
+            backgroundColor: 0x8040b,
+            size: 1.5,
+        })
+    </script>
+
+</body>
+
+</html>
