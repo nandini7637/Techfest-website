@@ -8,8 +8,8 @@
     <link href="style.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
 
     <title>Innerve Task</title>
 
@@ -22,34 +22,6 @@
         html {
             overflow-x: hidden;
         }
-
-
-        .swiper-container {
-            width: 100%;
-            padding-top: 90px;
-            padding-bottom: 10px;
-            transition: all 0.5s linear;
-        }
-
-        .swiper-slide {
-            background-position: center;
-            background-size: cover;
-            width: 420px;
-            height: 420px;
-        }
-
-        .swiper-slide .number {
-            position: absolute;
-            top: 80%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0.75;
-            text-shadow: 4px 4px 4px rgba(255, 255, 255, 0.973),
-                -5px px 4px rgba(255, 255, 255, 0.952);
-            font-size: 40px;
-            font-weight: 400;
-        }
-
 
         footer{
   width: 100%;
@@ -184,6 +156,8 @@ footer a:hover{
 
 
 
+
+
     </style>
 
 </head>
@@ -191,7 +165,7 @@ footer a:hover{
 <body style="background-color: black;">
 
     <!--Navbar-->
-<section id=head>
+
     <div class="nav" style="position:fixed;">
         <input type="checkbox" id="nav-check">
         <div class="nav-header">
@@ -211,10 +185,10 @@ footer a:hover{
             <a href="events.html">Events</a>
             <a href="gallary.html">Gallary</a>
             <a href="sponsor.html" >Sponsors</a>
-            <a href="#team">Meet the team!</a>
+            <a href="team.html">Meet the team!</a>
         </div>
     </div>
-</section>
+
     <!--Title Header-->
 
     <div class="head">
@@ -248,34 +222,8 @@ footer a:hover{
     <br /><br />
     <!--Meet the team-->
 
-    <h2
-        style="text-align: center;color: aliceblue;font-size: xx-large;text-transform: uppercase;text-decoration: underline;">
-        Meet our Team</h2>
-
-        <section id="team">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-color: aliceblue;">
-                <div class="number" style="color:black;">Image of Web dev head</div>
-            </div>
-            <div class="swiper-slide" style="background-color: aliceblue;">
-                <div class="number" style="color:black;">Image of Convener head</div>
-            </div>
-            <div class="swiper-slide" style="background-color: aliceblue;">
-                <div class="number" style="color:black;">Image of CSE head</div>
-            </div>
-            <div class="swiper-slide" style="background-color: aliceblue;">
-                <div class="number" style="color:black;">Image of HR head</div>
-            </div>
-            <div class="swiper-slide" style="background-color: aliceblue;">
-                <div class="number" style="color:black;">Image of PR head etc</div>
-            </div>
-
-        </div>
-
-        <div class="swiper-pagination"></div>
-    </div>
-        </section>
+    
+    
     <br/>
 
 
@@ -331,30 +279,6 @@ footer a:hover{
 
 
 
-
-
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            effect: 'coverflow',
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: 'auto',
-            coverflowEffect: {
-                rotate: 50,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: true,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-            },
-            loop: true,
-        });
-    </script>
 
 
 
